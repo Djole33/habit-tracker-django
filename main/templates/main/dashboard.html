@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<body>
+
+    <h5> Welcome! {{user}} 👋 </h5>
+
+    <hr>
+
+    <a class="btn btn-outline-primary btn-sm" href="{% url 'create-habit' %}"> 
+	Create a new habit
+    </a>
+
+    <hr>
+
+    {% if habits %}
+        {% for habit in habits %}
+            <p> ID: {{ habit.id }} </p>
+            <p class="dashboard-text"> Habit: {{ habit.habit }} </p>
+            <p class="dashboard-date"> Time Started: {{ habit.created }} </p>
+            <p> <a href="{% url 'habit' habit.id %}"> View </a> </p>
+        {% endfor %}
+    {% endif %}
+
+</body>
+{% endblock %}

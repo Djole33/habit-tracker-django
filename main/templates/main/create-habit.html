@@ -1,0 +1,28 @@
+{% extends 'main/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<body>
+
+    <div class="container bg-light shadow-md p-5 form-layout">
+        <h3> Create habit </h3>
+	<br>
+	<h5> Start adding in the required details for your habit. </h5>
+	<hr>
+	<br>
+	<form method="POST" autocomplete="off">
+	    {% csrf_token %}
+        
+        {{ form|crispy }}
+
+	    <br>
+
+	    <button class="btn btn-primary w-100 btn-block p-2" type="submit"> Create habit </a>
+	    
+	</form>
+    </div>
+</body>
+
+{% endblock %}
