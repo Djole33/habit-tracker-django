@@ -14,11 +14,11 @@
 
     &nbsp;
 
-    <a href="" class="btn btn-info"> Update habit </a>
+    <a href="{% url 'update-habit' habit.id %}" class="btn btn-info"> Update habit </a>
 
     &nbsp;
 
-    <a href="" class="btn btn-danger"> Delete </a>
+    <a href="{% url 'delete-habit' habit.id %}" class="btn btn-danger"> Delete </a>
 
 </body>
 

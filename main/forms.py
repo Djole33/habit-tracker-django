@@ -18,4 +18,9 @@ class AddHabitForm(forms.ModelForm):
     class Meta:
         model=Habit
         fields = ['habit']
-        
+
+class UpdateHabitForm(forms.ModelForm):
+    class Meta:
+        model=Habit
+        fields = ['habit'] + [f'day_{i}' for i in range(1, 51)]
+             
